@@ -1,70 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 1px;
+    padding: 1px;
     box-sizing: border-box;
 }
-
-nav {
-    background-color: rgba(5, 121, 111, 0.938);
-    border-radius: 14px;
-    margin: 10px 5px 10px 5px;
+.container-anime {
+    display: grid;
+    grid-template-columns: 80px 400px;
+    grid-template-rows: 20px 100px 50px;
+    grid-template-areas:
+        "poster title"
+        "poster synopsis"
+        "poster statbox"
+    ;
+    /* gap: 10px; */
+    column-gap: 3px;
+    row-gap: 3px;  
 }
-.container-DN {
-    list-style: none;
-    width: 100%;
-    min-width: 300px;
+.poster-anime {
+    width: 80px;
+    height: auto;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    grid-area: poster;  
+    justify-self: center;
+    align-self: center;
+    padding-bottom: 101px;
+}
+
+.title-anime {
+    grid-area: title;
+    font-size: 0.80rem;
+    align-self:flex-end;
+}
+
+.synopsis-anime {
+    grid-area: synopsis;
+    font-size: 0.60rem;
+    width: 98%;
+    text-align: justify;
+    /* align-self: center; */
+
+}
+
+#statBox {
+    gap: 10px;
+    grid-area: statbox;
+    font-size: 0.60rem;
+    text-align: justify;
+    margin: 5px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.listItem-DN {
-    height: 50px;
-    /* text-decoration: none; */
-}
-.listItem-DN a{
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    padding: 15px 15px 0px 15px;
-    text-decoration: none;
-    color: white;
-}
-
-
-.listItem-DN:first-child {
-    padding-right: 0px;
-    margin-right: auto;
-}
-
-
-.container-MN {
-    position: fixed;
-    top: 0;
-    right: 0;
-    list-style: none;
-    width: 100%;
-    min-width: 300px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.listItem-MN {
-    height: 50px;
-    /* text-decoration: none; */
-}
-.listItem-MN a{
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    padding: 15px 15px 0px 15px;
-    text-decoration: none;
-    color: white;
-}
-
-
-.listItem-MN:first-child {
-    padding-right: 0px;
-    margin-right: auto;
 }

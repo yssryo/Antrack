@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
 
 .navbar {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-self: center;
     justify-content: space-between;
     margin: 20px;
@@ -51,7 +51,7 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: flex-end;
     font-size: clamp(12px, 2vw, 27px);
-    gap: 8px;
+    gap: 10px;
     text-underline-offset: 6px;
     margin-bottom: 10px;
 }
@@ -59,7 +59,8 @@ body::-webkit-scrollbar {
 
 .bottomGrup {
     display: flex;
-    padding-top: 16px;
+    padding: 16px 0px 0px 0px;
+
 }
 
 .nav-item a {
@@ -75,7 +76,7 @@ body::-webkit-scrollbar {
 #searchAnime {
     font-size: 9px;
     border-radius: 5px;
-    padding: 12px 18px 8px 8px;
+    padding: 12px 10px 8px 8px;
     text-align: left;
     background-color: var(--text);
     border: none;
@@ -294,12 +295,30 @@ body::-webkit-scrollbar {
     text-decoration-thickness: 4px;
     text-underline-offset: 8px;
     color: var(--text);
+    cursor: pointer;
 }
 
 .h1A:hover {
     text-decoration: underline var(--primary);
     text-decoration-thickness: 4px;
     text-underline-offset: 8px;
+}
+
+
+.upComing {
+    background-color: var(--primary);
+    right: clamp(1px, 1vw, 10px);
+    left: clamp(1px, 1vw, 10px);
+    top: 98vh;
+    position: relative;
+    margin: 60px 40px 60px 20px;
+    padding: 10px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    grid-template-rows: auto auto;
 }
 
 
@@ -320,6 +339,7 @@ body::-webkit-scrollbar {
     .nav-item {
         display: none;
     }
+
     .nav-icon {
         display: flex;
         width: 40px;
@@ -330,6 +350,7 @@ body::-webkit-scrollbar {
     .bottomGrup {
         display: flex;
         margin-top: auto;
+        margin-bottom: 5px;
         align-items: flex-start;
         flex-direction: row;
         gap: 1px;
@@ -357,20 +378,20 @@ body::-webkit-scrollbar {
     
     
     .nav-item.nyala {
-        top: clamp(19px, 1%, 100px);
+        top: clamp(14px, 1vw, 100px);
         right: 1%;
         gap: 5px;
         display: flex;
-        justify-content: flex-start;
         align-items: flex-start;
+        justify-content: center;
         flex-direction: column;
         margin-top: 1px;
         background-color: var(--surface);
         z-index: 999;
-        height: 100vh;
+        height: 99vh;
         width: 170px;
         position: absolute;
-        padding: 0px 30px 28px 10px;
+        padding: 0px 30px 18px 10px;
         z-index: 10;
     }
     
@@ -390,9 +411,6 @@ body::-webkit-scrollbar {
         z-index: 9;
     }
 
-
-    
-
     #searchAnime {
         font-size: 9.60px;
         padding: 12px 6px 9px 7px;
@@ -405,6 +423,8 @@ body::-webkit-scrollbar {
 
     .navbar {
         width: 90%;
+        display: flex;
+        align-items: center;
     }
 
     .line {

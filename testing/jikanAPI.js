@@ -67,10 +67,12 @@ function loadAnime() {
 
 
         card.innerHTML = `
-        <h2>${title}</h2>
-        <h1 class="textS">${synopsis}</h1>
-        <img src="${linkImg}" alt="Poster ${title}" width="auto">
+        <div class="container-anime">
+        <img src="${linkImg}" alt="Poster ${title}" class="poster-anime">
+        <h2 class="title-anime">${title}</h2>
+        <h1 class="synopsis-anime">${synopsis}</h1>
         <div id="statBox">loading....</div>
+        </div>
         `;
 
         return fetch(`https://api.jikan.moe/v4/anime/${animeId}/statistics`)
@@ -103,14 +105,3 @@ function loadAnime() {
     })
     .catch(error => console.error("something went wrong u know?:", error));
 };
-
-
-
-// fetch(url, options)
-// .then(response => response.json())
-// .then(data => console.log(data))
-// .catch(error => console.error("something went wrong", error))
-
-// fetch(`https://api.jikan.moe/v4/anime/47917/statistics`)
-// .then(response => response.json())
-// .then(data => console.log(data))

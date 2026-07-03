@@ -38,7 +38,7 @@ function showToPage(animeList) {
             <img src="${anime.images.jpg.large_image_url}" alt="${anime.title}" class="card-image"></img>
             </a>
             <div class="text-wrapper">
-            <h2 class="anime-title">${anime.title}</h2>
+            <h1 class="anime-title">${anime.title_english}</h1>
             <p class="anime-score">${anime.score || `N/A`}</p>
             </div>
         </div>
@@ -48,3 +48,17 @@ function showToPage(animeList) {
 }
 
 document.addEventListener(`DOMContentLoaded`, loadAnimeTop);
+
+
+
+
+async function LoadAnimeUpcoming() {
+    const urlUpcoming = `https://api.jikan.moe/v4/seasons/upcoming`
+
+}
+
+
+fetch(`https://api.jikan.moe/v4/seasons/upcoming`)
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error("something went wrong:", error))
