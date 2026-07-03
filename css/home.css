@@ -252,14 +252,14 @@ body::-webkit-scrollbar {
     display: grid;
     grid-template-rows: auto auto;
     grid-auto-flow: column;
-    grid-auto-columns: 230px;
+    grid-auto-columns: 264px;
     overflow-x: auto;
     justify-content: start;
     overflow-y: hidden;
     scroll-behavior: smooth;
     gap: 30px;
     width: 100%;
-    max-width: 12000px;
+    max-width: 10000px;
 }
 
 #card-topA::-webkit-scrollbar {
@@ -309,16 +309,10 @@ body::-webkit-scrollbar {
     background-color: var(--primary);
     right: clamp(1px, 1vw, 10px);
     left: clamp(1px, 1vw, 10px);
-    top: 98vh;
-    position: relative;
+    top: 110vh;
     margin: 60px 40px 60px 20px;
+    position: relative;
     padding: 10px;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    grid-template-rows: auto auto;
 }
 
 
@@ -378,7 +372,7 @@ body::-webkit-scrollbar {
     
     
     .nav-item.nyala {
-        top: clamp(14px, 1vw, 100px);
+        top: clamp(19px, 1vw, 100px);
         right: 1%;
         gap: 5px;
         display: flex;

@@ -52,13 +52,21 @@ document.addEventListener(`DOMContentLoaded`, loadAnimeTop);
 
 
 
-async function LoadAnimeUpcoming() {
-    const urlUpcoming = `https://api.jikan.moe/v4/seasons/upcoming`
+async function LoadAnimeUpcoming(upcoming) {
+    const urlUpcoming = `https://api.jikan.moe/v4/seasons/upcoming`;
+    try {
+        const response = await fetch(urlUpcoming);
+        if (!response.ok) {
+            throw new Error(`something went wrong:, ${response.status}`);
+        }
+        const responseObj = await response.json();
+        const animeComingSoon = responseObj.data ? responseObj.data.slice(0, 5) : [];
+        console.log("upcoming anime:", animeComingSoon);
 
-}
+    }
+    catch (error) {
+        console.error("something went wrong:", error.message);
+    };
+};
 
-
-fetch(`https://api.jikan.moe/v4/seasons/upcoming`)
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error("something went wrong:", error))
+LoadAnimeUpcoming();

@@ -78,12 +78,10 @@ function hamburgerN() {
     const closeIcon = document.querySelector(".open-icon");
     const hamburgerIcon = document.querySelector(".iconH");
     const overlayOn     = document.getElementById("overLay");
-    // const bodyElement   = document.querySelector("body");
 
     navItem.classList.toggle("nyala");
     closeIcon.classList.toggle("nyala");
     hamburgerIcon.classList.toggle("hide");
-    // bodyElement.classList.toggle("no-scroll");
     document.body.classList.toggle("no-scroll");
     if(overlayOn.style.display === "block") {
         overlayOn.style.display = "block"
@@ -100,7 +98,6 @@ function openNavbar() {
     const closeIcon = document.querySelector(".open-icon");
     const hamburgerIcon = document.querySelector(".iconH");
     const overlayOn     = document.getElementById("overLay");
-    // const bodyElement   = document.querySelector("body");
 
     document.body.classList.toggle("no-scroll");
     navItem.classList.toggle("nyala");
