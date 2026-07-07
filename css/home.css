@@ -11,12 +11,26 @@ html {
 
 
 :root {
-    --background: #0F0F0F;
-    --surface: #1A1A1A;
-    --primary: #8B5CF6;
-    --accent: #EC4899;
-    --text: #FFFFFF;
-    --secondary: #A1A1AA;
+    /* background */
+    --background: #1E1F2B;
+    --card-background: #2A2D3E;
+    --surface: #31323e;
+    --secondary: #B8B8C8;
+
+    /* brand */
+    --accent: #9377FF;
+    --primary: #7C5CFF;
+
+    /* text */
+    --text: #F5F5F5;
+    --text-secondary: #B8B8C8;
+
+
+    /* extra */
+    --border: #3B3E54;
+    --rating: #FFD54A;
+    --danger: #EF4444;
+    --success: #22C55E;
 }
 
 body {
@@ -46,22 +60,22 @@ body::-webkit-scrollbar {
 
 .logo {
  font-family: "linotype", serif;
- color: var(--primary);
+ color: var(--accent);
  font-size: 30px;
  padding: 0px 0px 0px 10px;
 }
 
 .logo span {
-    color : var(--accent);
+    color : var(--text);
 }
 
 .nav-item {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
     font-size: clamp(12px, 2vw, 27px);
     gap: 10px;
     text-underline-offset: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 
@@ -89,7 +103,7 @@ body::-webkit-scrollbar {
     background-color: var(--text);
     border: none;
     height: 27px;
-    margin: 10px 20px 0px 0px;
+    margin-top: 10px;
 }
 
 ::placeholder {
@@ -99,9 +113,9 @@ body::-webkit-scrollbar {
 }
 
 .nav-icon{
-    padding: 7px 0px 0px 0px;
+    padding: 7px 0px 3px 0px;
     width: 40px;
-    height: 40px;
+    height: 44px;
 }
 
 .iconH {
@@ -229,7 +243,7 @@ body::-webkit-scrollbar {
 }
 
 .popular-anime {
-    background-color: var(--accent);
+    background-color: var(--card-background);
     right: clamp(1px, 1vw, 10px);
     left: clamp(1px, 1vw, 10px);
     position: absolute;
@@ -300,7 +314,7 @@ body::-webkit-scrollbar {
     font-size: 26px;
     padding: 0px 0px 10px 20px;
     justify-self: start;
-    text-decoration: underline var(--background);
+    text-decoration: underline var(--secondary);
     text-decoration-thickness: 4px;
     text-underline-offset: 8px;
     color: var(--text);
@@ -315,7 +329,7 @@ body::-webkit-scrollbar {
 
 
 .upComing {
-    background-color: var(--primary);
+    background-color: var(--card-background);
     right: clamp(1px, 1vw, 10px);
     left: clamp(1px, 1vw, 10px);
     top: 120vh;
@@ -336,8 +350,8 @@ body::-webkit-scrollbar {
 
     .logo {
         font-size: 19px;
-        padding: 0px 0px 0px 8px;
-        margin: 0px 10px 0px 0px;
+        padding-left:8px;
+        margin-right: 10px;
     }
 
     .nav-item {
@@ -345,10 +359,10 @@ body::-webkit-scrollbar {
     }
 
     .nav-icon {
-        display: flex;
-        width: 40px;
-        height: 44px;
+        width: 32px;
+        height: 39px;
         flex-shrink: 0;
+
     }
 
     .bottomGrup {
@@ -382,19 +396,19 @@ body::-webkit-scrollbar {
     
     
     .nav-item.nyala {
-        top: clamp(19px, 1vw, 100px);
-        right: 1%;
+        /* border: 2px solid var(--danger); */
+        top: 20px;
+        right: 8px;
         gap: 5px;
         display: flex;
         align-items: flex-start;
-        justify-content: center;
         flex-direction: column;
-        margin-top: 1px;
+        /* margin-top: 2vw; */
         background-color: var(--surface);
         z-index: 999;
-        height: 100%;
-        width: 170px;
-        position: absolute;
+        height: calc(99vh - 20px);
+        width: fit-content;
+        position: fixed;
         padding: 0px 30px 18px 10px;
         z-index: 10;
     }
@@ -416,12 +430,14 @@ body::-webkit-scrollbar {
     }
 
     #searchAnime {
-        font-size: 9.60px;
-        padding: 12px 6px 9px 7px;
-        margin: 14px 5px 0px 0px;
+        font-size: 8.60px;
+        padding-left: 7px;
+        margin-top:8px;
+        margin-right: 10px;
     }
-
+    
     ::placeholder {
+        justify-items: center;
         font-size: 12px;
     }
 
@@ -429,6 +445,7 @@ body::-webkit-scrollbar {
         width: 90%;
         display: flex;
         align-items: center;
+        /* border:2px solid var(--rating); */
     }
 
     .line {
@@ -509,6 +526,7 @@ body::-webkit-scrollbar {
     .upComing {
         top: 4vh;
         margin: 0px 20px 0px 20px;
+        
     }
 
 }

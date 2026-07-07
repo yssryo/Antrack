@@ -1,18 +1,3 @@
-    // const url = `https://api.jikan.moe/v4/top/anime?=limit3`
-    // fetch(url)
-    // .then(response => response.json())
-    // .then(responseObj => {
-    //     const rawData   = responseObj.data;
-    //     const topTrandingA = rawData ? rawData.slice(0, 10) : [];
-
-    //     console.log("top 3 anime this season:", topTrandingA);
-    //     console.log("current data:", topTrandingA.lenght);
-
-    //     topTrandingA.forEach((anime, index) => {
-    //         console.log(`rank ${index + 1}: ${anime.title}`);
-    //     });
-    // });
-
     
 function loadAnimeTop() {
     const urlTop = `https://api.jikan.moe/v4/top/anime`

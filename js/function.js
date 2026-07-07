@@ -72,12 +72,14 @@ function showSlides(n) {
 //    }
 // };
 
-function hamburgerN() {
+
     const navItem = document.querySelector(".nav-item");
     const userIcon = document.querySelector(".nav-icon");
     const closeIcon = document.querySelector(".open-icon");
     const hamburgerIcon = document.querySelector(".iconH");
     const overlayOn     = document.getElementById("overLay");
+
+function hamburgerN() {
 
     navItem.classList.toggle("nyala");
     closeIcon.classList.toggle("nyala");
@@ -93,15 +95,10 @@ function hamburgerN() {
 
 
 function openNavbar() {
-    const navItem = document.querySelector(".nav-item");
-    const userIcon = document.querySelector(".nav-icon");
-    const closeIcon = document.querySelector(".open-icon");
-    const hamburgerIcon = document.querySelector(".iconH");
-    const overlayOn     = document.getElementById("overLay");
-
     document.body.classList.toggle("no-scroll");
     navItem.classList.toggle("nyala");
     closeIcon.classList.toggle("nyala");
+    
     hamburgerIcon.classList.toggle("hide");
     if(overlayOn.style.display === "block") {
         overlayOn.style.display = "none"
