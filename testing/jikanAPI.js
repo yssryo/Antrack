@@ -60,15 +60,19 @@ function loadAnime() {
 
             const anime     = animeList[0];
             const animeId   = anime.mal_id;
-            const linkImg = anime.images?.jpg?.large_image_url || anime.images?.jpg?.image.url;
-            const title   = anime.title;
-            const card    = document.getElementById("animeCard");
+            const title     = anime.title;
+            const synopsis  = anime.synopsis;
+            const linkImg   = anime.images?.jpg?.large_image_url || anime.images?.jpg?.image.url;
+            const card      = document.getElementById("animeCard");
 
 
         card.innerHTML = `
-        <h2>${title}</h2>
-        <img src="${linkImg}" alt="Poster ${title}" width="auto">
+        <div class="container-anime">
+        <img src="${linkImg}" alt="Poster ${title}" class="poster-anime">
+        <h2 class="title-anime">${title}</h2>
+        <h1 class="synopsis-anime">${synopsis}</h1>
         <div id="statBox">loading....</div>
+        </div>
         `;
 
         return fetch(`https://api.jikan.moe/v4/anime/${animeId}/statistics`)
@@ -101,8 +105,3 @@ function loadAnime() {
     })
     .catch(error => console.error("something went wrong u know?:", error));
 };
-
-
-// fetch(`https://api.jikan.moe/v4/anime/47917/statistics`)
-// .then(response => response.json())
-// .then(data => console.log(data))

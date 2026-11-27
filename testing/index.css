@@ -1,5 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 1px;
+    padding: 1px;
     box-sizing: border-box;
+}
+.container-anime {
+    display: grid;
+    grid-template-columns: 80px 400px;
+    grid-template-rows: 20px 100px 50px;
+    grid-template-areas:
+        "poster title"
+        "poster synopsis"
+        "poster statbox"
+    ;
+    /* gap: 10px; */
+    column-gap: 3px;
+    row-gap: 3px;  
+}
+.poster-anime {
+    width: 80px;
+    height: auto;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    grid-area: poster;  
+    justify-self: center;
+    align-self: center;
+    padding-bottom: 60px;
+}
+
+.title-anime {
+    grid-area: title;
+    font-size: 0.80rem;
+    align-self:flex-end;
+}
+
+.synopsis-anime {
+    grid-area: synopsis;
+    font-size: 0.60rem;
+    width: 98%;
+    text-align: justify;
+    /* align-self: center; */
+
+}
+
+#statBox {
+    gap: 10px;
+    grid-area: statbox;
+    font-size: 0.60rem;
+    text-align: justify;
+    margin: 5px;
+    display: flex;
 }

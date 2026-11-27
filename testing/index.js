@@ -58,23 +58,23 @@
 
 
 
-function searchAnime() {
-  const kataKunci = document.getElementById("searching").value;
-  if(!kataKunci) {
-    alert("salah");
-    return;
-  }
-  const url = `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(kataKunci)}&limit=5`
-  fetch(url) 
-  .then(response => response.json())
-  .then(responseObj => {
-    const animeResault = responseObj.data;
-    console.clear();
-    console.log(`hasil: "${kataKunci}"`);
+// function searchAnime() {
+//   const kataKunci = document.getElementById("searching").value;
+//   if(!kataKunci) {
+//     alert("salah");
+//     return;
+//   }
+//   const url = `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(kataKunci)}&limit=5`
+//   fetch(url) 
+//   .then(response => response.json())
+//   .then(responseObj => {
+//     const animeResault = responseObj.data;
+//     console.clear();
+//     console.log(`hasil: "${kataKunci}"`);
 
-    animeResault.forEach((anime, index) => {
-      console.log(`${index + 1}.${anime.title}.${anime.type}.${anime.images}.${anime.rating}${anime.synopsis} (score: ${anime.score})`)
-    })
-  })
-  .catch(error => console.error("not found:", error))
-}
+//     animeResault.forEach((anime, index) => {
+//       console.log(`${index + 1}.${anime.title}.${anime.type}.${anime.images}.${anime.rating}${anime.synopsis} (score: ${anime.score})`)
+//     })
+//   })
+//   .catch(error => console.error("not found:", error))
+// }

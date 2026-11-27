@@ -1,0 +1,57 @@
+    
+function loadAnimeTop() {
+    const urlTop = `https://api.jikan.moe/v4/top/anime`
+    fetch(urlTop)
+    .then(response => response.json())
+    .then(responseObj => {
+        const topTen = responseObj.data ? responseObj.data.slice(0, 16) : [];
+        showToPage(topTen);
+    })
+    .catch(error => console.error("something went wrong:", error))
+}
+
+function showToPage(animeList) {
+    const container = document.getElementById('card-topA')
+    if(!container) return;
+    let contentHtml= "";
+    
+    animeList.forEach(anime => {
+        contentHtml += 
+        `
+        <div class="anime-card">
+            <a href="${anime.url}" class="image-link">
+            <img src="${anime.images.jpg.large_image_url}" alt="${anime.title}" class="card-image"></img>
+            </a>
+            <div class="text-wrapper">
+            <h1 class="anime-title">${anime.title_english}</h1>
+            <p class="anime-score">${anime.score || `N/A`}</p>
+            </div>
+        </div>
+        `;
+    })
+    container.innerHTML = contentHtml;
+}
+
+document.addEventListener(`DOMContentLoaded`, loadAnimeTop);
+
+
+
+
+async function LoadAnimeUpcoming(upcoming) {
+    const urlUpcoming = `https://api.jikan.moe/v4/seasons/upcoming`;
+    try {
+        const response = await fetch(urlUpcoming);
+        if (!response.ok) {
+            throw new Error(`something went wrong:, ${response.status}`);
+        }
+        const responseObj = await response.json();
+        const animeComingSoon = responseObj.data ? responseObj.data.slice(0, 5) : [];
+        console.log("upcoming anime:", animeComingSoon);
+
+    }
+    catch (error) {
+        console.error("something went wrong:", error.message);
+    };
+};
+
+LoadAnimeUpcoming();
